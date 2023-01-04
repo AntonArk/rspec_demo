@@ -1,29 +1,25 @@
 require './hero' 
 
-describe Hero do   
+describe Hero do  
+  
+  before do
+    @hero = Hero.new 'tony'
+  end
 
   it "has a capitalized name" do
-    hero = Hero.new 'tony'
-  
-    expect(hero.name).to eq 'Tony'
+    expect(@hero.name).to eq 'Tony'
   end
 
   it "can power up" do
-    hero = Hero.new 'tony'
-  
-    expect(hero.power_up).to eq 110
+    expect(@hero.power_up).to eq 110
   end
 
   it "can power down" do
-    hero = Hero.new 'tony'
-  
-    expect(hero.power_down).to eq 90
+    expect(@hero.power_down).to eq 90
   end
 
   it "displays full hero info" do
-    hero = Hero.new 'tony'
-  
-    expect(hero.hero_info).to eq 'Tony has a health of 100'
+    expect(@hero.hero_info).to eq 'Tony has a health of 100'
   end
 
 end
